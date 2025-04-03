@@ -71,5 +71,6 @@ in
     pkgs.kubectl
     pkgs.kubectx
     pkgs.direnv
+    pkgs.bat
   ];
 }
