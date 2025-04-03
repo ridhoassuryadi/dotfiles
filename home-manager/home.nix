@@ -4,6 +4,12 @@ let
   username = "ridho"; # Replace with your username
 in
 {
+  imports = [
+    ./modules/cli-tools.nix
+    ./modules/dev-tools.nix
+    ./modules/shell.nix
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "ridho";
@@ -37,40 +43,14 @@ in
   };
 
   # Import aliases
-  home.shellAliases = (import ./aliases.nix { inherit pkgs; }).shell;
+  home.shellAliases = (import ./shared/aliases.nix { inherit pkgs; }).shell;
   
   # Import environment variables
-  home.sessionVariables = (import ./env.nix { inherit pkgs username; });
+  home.sessionVariables = (import ./shared/env.nix { inherit pkgs username; });
 
-  # Set up program-specific aliases
-  programs = {
-    git = {
-      enable = true;
-      aliases = (import ./aliases.nix { inherit pkgs; }).git;
-    };
-    
-    gh = {
-      enable = true;
-      settings = {
-        aliases = (import ./aliases.nix { inherit pkgs; }).gh;
-      };
-    };
-  };
+  # Import Packages
+  home.packages = import ./modules/packages.nix { inherit pkgs; };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  # NEOVIM
-  programs.neovim.enable = true;
-
-  home.packages = [
-    pkgs.go
-    pkgs.eza
-    pkgs.zellij
-    pkgs.just
-    pkgs.kubectl
-    pkgs.kubectx
-    pkgs.direnv
-    pkgs.bat
-  ];
 }
