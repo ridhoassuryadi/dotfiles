@@ -7,6 +7,7 @@ in
   imports = [
     ./modules/cli-tools.nix
     ./modules/dev-tools.nix
+    ./modules/neovim.nix
     ./modules/shell.nix
   ];
 
