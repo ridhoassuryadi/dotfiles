@@ -8,8 +8,14 @@ in
     ./modules/cli-tools.nix
     ./modules/dev-tools.nix
     ./modules/neovim.nix
+    ./modules/elixir.nix
+    ./modules/postgres.nix
+    ./modules/nodejs.nix
     ./modules/shell.nix
   ];
+
+  elixir.enable = true;
+  postgres.enable = true;
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -42,6 +48,8 @@ in
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
+
+  nixpkgs.overlays = [ (import ./overlays/neovim.nix) ];
 
   # Import aliases
   home.shellAliases = (import ./shared/aliases.nix { inherit pkgs; }).shell;
