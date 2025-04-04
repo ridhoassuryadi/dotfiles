@@ -1,14 +1,45 @@
 { pkgs }:
 
-with pkgs; [  
-    bat
-    go 
-    eza 
+with pkgs; [
+    # RUST TUI/CLI Tools
+    bottom
+    du-dust
+    fd
+    procs
+    ripgrep
+    gitui
+    tokei
+    xan
+
+    # Development
+    helix
     jq
-    kubectx 
-    minikube
-    direnv 
+    git-crypt
+    tig
+    tree-sitter
+
+    # RUST
+    rustup
+
+    # GO 
+    go
+
+    # Internet
+    speedtest-cli
+
+    # Media 
+    imagemagick
+
+    # Kubernetes
     kubectl 
-    zellij 
-    neovim
+    minikube
+    kubectx
+
+    # Overview
+    wtfutil
+    direnv
+
+    bat
+    eza
+    zellij
 ]
