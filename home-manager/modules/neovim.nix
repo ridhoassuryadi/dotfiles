@@ -15,12 +15,11 @@
       nerdtree
       vim-elixir
       vim-go
-      vim-reason-plus
       vim-gitgutter
       gruvbox
       vim-nerdtree-syntax-highlight
+      vim-jsx-pretty
       vim-javascript
-      vim-jsx
       coc-nvim
       vim-devicons
     ];
@@ -160,9 +159,7 @@
     # For NERD font support
     extraPackages = with pkgs; [
       # Fonts (optional)
-      nerdfonts
-      # Language servers (for coc.nvim)
-      nodejs
+      nerd-fonts.fira-code  # Or your preferred font
     ];
   };
 }

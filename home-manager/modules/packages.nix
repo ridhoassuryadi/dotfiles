@@ -39,7 +39,5 @@ with pkgs; [
     wtfutil
     direnv
 
-    bat
-    eza
     zellij
 ]

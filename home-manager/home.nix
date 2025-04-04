@@ -9,6 +9,8 @@ in
     ./modules/dev-tools.nix
     ./modules/neovim.nix
     ./modules/elixir.nix
+    ./modules/bat.nix
+    ./modules/eza.nix
     ./modules/postgres.nix
     ./modules/nodejs.nix
     ./modules/shell.nix
