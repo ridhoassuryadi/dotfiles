@@ -9,6 +9,52 @@ if [[ "$(uname)" == "Darwin" ]]; then
     else
         echo "Homebrew is already installed."
     fi
+
+# Install Monaco font
+if [[ "$(uname)" == "Darwin" ]]; then
+    echo "Installing Monaco font..."
+    MONACO_URL="https://github.com/todylu/monaco.ttf/raw/master/monaco.ttf"
+    MONACO_FONT="$HOME/Library/Fonts/Monaco.ttf"
+    if [ ! -f "$MONACO_FONT" ]; then
+        curl -fLo "$MONACO_FONT" --create-dirs "$MONACO_URL"
+        echo "Monaco font installed."
+    else
+        echo "Monaco font already exists."
+    fi
+
+    # Install FiraCode font
+    echo "Installing FiraCode font..."
+    if ! brew list --cask | grep -q "font-fira-code"; then
+        brew tap homebrew/cask-fonts
+        brew install --cask font-fira-code
+        echo "FiraCode font installed."
+    else
+        echo "FiraCode font already installed."
+    fi
+fi
+fi
+
+# Install Monaco font
+if [[ "$(uname)" == "Darwin" ]]; then
+    echo "Installing Monaco font..."
+    MONACO_URL="https://github.com/todylu/monaco.ttf/raw/master/monaco.ttf"
+    MONACO_FONT="$HOME/Library/Fonts/Monaco.ttf"
+    if [ ! -f "$MONACO_FONT" ]; then
+        curl -fLo "$MONACO_FONT" --create-dirs "$MONACO_URL"
+        echo "Monaco font installed."
+    else
+        echo "Monaco font already exists."
+    fi
+
+    # Install FiraCode font
+    echo "Installing FiraCode font..."
+    if ! brew list --cask | grep -q "font-fira-code"; then
+        brew tap homebrew/cask-fonts
+        brew install --cask font-fira-code
+        echo "FiraCode font installed."
+    else
+        echo "FiraCode font already installed."
+    fi
 fi
 
 # Install Nix (single-user mode)
@@ -18,6 +64,29 @@ sh <(curl -L https://nixos.org/nix/install) --no-daemon
 # Source Nix profile for current shell
 if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
     . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+fi
+
+# Install Monaco font
+if [[ "$(uname)" == "Darwin" ]]; then
+    echo "Installing Monaco font..."
+    MONACO_URL="https://github.com/todylu/monaco.ttf/raw/master/monaco.ttf"
+    MONACO_FONT="$HOME/Library/Fonts/Monaco.ttf"
+    if [ ! -f "$MONACO_FONT" ]; then
+        curl -fLo "$MONACO_FONT" --create-dirs "$MONACO_URL"
+        echo "Monaco font installed."
+    else
+        echo "Monaco font already exists."
+    fi
+
+    # Install FiraCode font
+    echo "Installing FiraCode font..."
+    if ! brew list --cask | grep -q "font-fira-code"; then
+        brew tap homebrew/cask-fonts
+        brew install --cask font-fira-code
+        echo "FiraCode font installed."
+    else
+        echo "FiraCode font already installed."
+    fi
 fi
 
 # Add Home Manager channel
@@ -49,6 +118,29 @@ if [[ "$install_flatpak" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     else
         echo "Please install Flatpak manually for your distribution."
     fi
+
+# Install Monaco font
+if [[ "$(uname)" == "Darwin" ]]; then
+    echo "Installing Monaco font..."
+    MONACO_URL="https://github.com/todylu/monaco.ttf/raw/master/monaco.ttf"
+    MONACO_FONT="$HOME/Library/Fonts/Monaco.ttf"
+    if [ ! -f "$MONACO_FONT" ]; then
+        curl -fLo "$MONACO_FONT" --create-dirs "$MONACO_URL"
+        echo "Monaco font installed."
+    else
+        echo "Monaco font already exists."
+    fi
+
+    # Install FiraCode font
+    echo "Installing FiraCode font..."
+    if ! brew list --cask | grep -q "font-fira-code"; then
+        brew tap homebrew/cask-fonts
+        brew install --cask font-fira-code
+        echo "FiraCode font installed."
+    else
+        echo "FiraCode font already installed."
+    fi
+fi
 else
     echo "Skipping Flatpak installation."
 fi
