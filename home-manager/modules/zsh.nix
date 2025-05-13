@@ -46,18 +46,6 @@
       pb = "pnpm run build";
       v = "nvim";
 
-      # Raizora dev servers
-      slk = "pnpm run dev:lp-ketuju";
-      slr = "pnpm run dev:lp-raizora";
-      sld = "pnpm run dev:lp-dihadiri";
-      slh = "pnpm run dev:lp-himajin";
-      slg = "pnpm run dev:lp-gea-rental";
-      slt = "pnpm run dev:lp-tempat-teduh";
-      sdr = "pnpm run dev:ds-raizora";
-      sep = "pnpm run dev:erp";
-      szy = "pnpm run dev:zycas";
-      gf = "gf";
-
       # NIX
       hmb = "home-manager build";
       hms = "home-manager switch";
