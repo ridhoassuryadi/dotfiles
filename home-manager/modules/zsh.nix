@@ -65,6 +65,9 @@
       export PSPATH="$GITHUBPATH/ridhoassuryadi"
       export RACPATH="$GITHUBPATH/red-ant-colony"
 
+      # Code Editor
+      export PATH="$PATH:$HOME/.codeium/windsurf/bin"
+
       # Android
       export ANDROID_HOME="$HOME/Library/Android/sdk"
       export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/emulator"
