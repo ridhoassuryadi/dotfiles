@@ -14,6 +14,7 @@ in
     ./modules/postgres.nix
     ./modules/nodejs.nix
     ./modules/shell.nix
+    ./modules/zsh.nix
   ];
 
   elixir.enable = true;
