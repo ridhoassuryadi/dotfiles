@@ -40,4 +40,6 @@ with pkgs; [
     direnv
 
     zellij
+
+    commitizen
 ]
