@@ -51,14 +51,14 @@
       hms = "home-manager switch";
     };
 
-    initExtra = ''
+    initContent = ''
       # PATH configurations
       export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
       export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
       # Go configurations
       export GOROOT="${pkgs.go}/share/go"
-      export GOPATH="$HOME/go"
+      export GOPATH="$HOME/Documents/go"
       export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
       export GITHUBPATH="$GOPATH/github.com"
       export RZPATH="$GITHUBPATH/raizora"
@@ -76,6 +76,13 @@
       fpath=($HOME/.docker/completions $fpath)
       autoload -Uz compinit
       compinit
+
+      # SARU CLI
+      export SARU_SOURCE="$HOME/Documents/go/github.com/red-ant-colony/backend-monorepo/apps/saru-cli"
+      export SARU_PLAYGROUND="$HOME/Documents/go/github.com/red-ant-colony"
+
+      export SARU_PATH="$HOME/.saru/bin"
+      export PATH="$PATH:$SARU_PATH"
 
       # Zellij auto-start
       if [[ -z "$ZELLIJ" ]]; then
